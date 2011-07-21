@@ -52,8 +52,6 @@ i =<<CUT
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 CUT
 
-  max = 0
-
   # This removes the spaces, then turns each digit into a character
   # creating a new Array.
   i = i.split(" ")
