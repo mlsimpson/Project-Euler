@@ -14,9 +14,10 @@ require 'date'
 # And on leap years, twenty-nine.
 #
 # A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
-# How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+# How many Sundays fell on the first of the month during the twentieth century (1 Jan yearstart to 31 Dec 2000)?
 
-yearend = 2000
+yearstart = 1901
+yearend = 1905
 
 def find_sundays(d1, d2)
   d1 +=1 while (d1.wday != 0)
@@ -30,7 +31,7 @@ end
 
 timing_method do
   puts "Using Date class"
-  puts "Number of Sundays that feel on the 1st of the month:  #{find_sundays(Date::civil(1901, 1, 1), Date::civil(yearend, 12, 31))}"
+  puts "Number of Sundays that feel on the 1st of the month:  #{find_sundays(Date::civil(yearstart, 1, 1), Date::civil(yearend, 12, 31))}"
 end
 
 puts
@@ -42,9 +43,9 @@ timing_method do
   month_names = %w(January February March April May June July August September October November December)
 
   sundaycount = 0
-  startday = 2 # 1901 began on a Tuesday (day 2 of the week)
+  startday = 2 # yearstart began on a Tuesday (day 2 of the week)
 
-  (1901).upto(yearend){|year|
+  (yearstart).upto(yearend){|year|
     0.upto(11){|month|
       if startday % 7 == 0 # It's a Sunday
         # puts "#{month_names[month]} 1, #{year}"
