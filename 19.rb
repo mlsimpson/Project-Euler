@@ -20,7 +20,7 @@ def find_sundays(d1, d2)
   d1 +=1 while (d1.wday != 0)
   count = 0
   d1.step(d2, 7) do |date|
-    puts "#{Date::MONTHNAMES[date.mon]} #{date.day}, #{date.year}" if date.mday == 1
+    # puts "#{Date::MONTHNAMES[date.mon]} #{date.day}, #{date.year}" if date.mday == 1
     date.mday == 1 ? count += 1 : nil
   end
   count
