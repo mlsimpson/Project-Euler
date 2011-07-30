@@ -17,7 +17,7 @@ require 'date'
 # How many Sundays fell on the first of the month during the twentieth century (1 Jan yearstart to 31 Dec 2000)?
 
 yearstart = 1901
-yearend = 1905
+yearend = 2000
 
 def find_sundays(d1, d2)
   d1 +=1 while (d1.wday != 0)
