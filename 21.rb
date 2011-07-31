@@ -14,71 +14,58 @@ def find_divisors2(num)
 
   square_root = Math.sqrt(num)
 
-  # div_array = [1]
+  div_array = [1]
 
-  # 2.upto(square_root.to_i){|n|
-  #   if (num % n).zero?
-  #     div_array << n
-  #     div_array << (num / n)
-  #   end
-  # }
-
-  # div_array
-
-  sum = 1
   2.upto(square_root.to_i){|n|
-    if(num%n).zero?
-      sum += n + (num / n)
+    if (num % n).zero?
+      div_array << n
+      div_array << (num / n)
     end
   }
 
-  sum
+  div_array
 
 end
 
-# timing_method do
-#
-#   maxnum = 10000
-#
-#   max_amicable = 0
-#
-#   a1 = 2
-#
-#   amicable_array = Array.new
-#
-#   tested_numbers = Array.new
-#
-#   ami_sum = 0
-#
-#   while true
-#     if tested_numbers.include?(a1) == false
-#       # a2 = find_divisors2(a1).reduce(:+)
-#       a2 = find_divisors2(a1)
-#       #if find_divisors2(a2).reduce(:+) == a1 and a2 != a1
-#       if find_divisors2(a2) == a1 and a2 != a1
-#         max_amicable = [a1, a2].max
-#         if max_amicable > maxnum
-#           break
-#         end
-#         puts "#{a1} and #{a2} are amicable pairs"
-#         ami_sum += a1 + a2
-#         # amicable_array << a1
-#         # amicable_array << a2
-#       end
-#       tested_numbers << a1
-#       tested_numbers << a2
-#     end
-#     a1 += 1
-#   end
-#
-#   # puts "Sum of amicable pairs up to #{maxnum} is #{amicable_array.reduce(:+)}"
-#   puts "Sum of amicable pairs up to #{maxnum} is #{ami_sum}"
-#
-# end
-#
-# puts
-# puts "The following method is much, much faster."
-# puts
+timing_method do
+
+  maxnum = 10000
+
+  max_amicable = 0
+
+  a1 = 2
+
+  amicable_array = Array.new
+
+  tested_numbers = Array.new
+
+  ami_sum = 0
+
+  while true
+    if tested_numbers.include?(a1) == false
+      a2 = find_divisors2(a1).reduce(:+)
+      if find_divisors2(a2).reduce(:+) == a1 and a2 != a1
+        max_amicable = [a1, a2].max
+        if max_amicable > maxnum
+          break
+        end
+        puts "#{a1} and #{a2} are amicable pairs"
+        amicable_array << a1
+        amicable_array << a2
+      end
+      tested_numbers << a1
+      tested_numbers << a2
+    end
+    a1 += 1
+  end
+
+  puts "Sum of amicable pairs up to #{maxnum} is #{amicable_array.reduce(:+)}"
+
+end
+
+puts
+puts "The following method is much, much faster."
+puts
 
 def sum_of_divisors(num)
 
