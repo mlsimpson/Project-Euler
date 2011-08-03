@@ -61,3 +61,20 @@ timing_method do
   puts "The sum of the numbers on the diagonals in a #{size} by #{size} spiral is #{sum}."
 
 end
+
+# You all worked your computers too hard.
+# For a 2n+1 by 2n+1 square, the sum of the diagonals is
+# 8n(n+1)(2n+1)/3 + 2n(n+1) + 4n + 1
+# Substitute n=1001, and do it with pencil and paper.
+timing_method do
+
+  #2n+1 = 1001 ::> n = 500
+
+  realsize = 500
+  size = 2*realsize + 1
+
+  sum = 8*realsize*(realsize + 1)*((2*realsize) + 1)/3 + 2*realsize*(realsize + 1) + 4*realsize + 1
+
+  puts "The sum of the numbers on the diagonals in a #{size} by #{size} spiral is #{sum}."
+
+end
