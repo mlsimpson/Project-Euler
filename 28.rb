@@ -40,11 +40,24 @@ timing_method do
   size = 1001
   sum = 1
 
-  (3..size).step(2).each{|n|
+  (3..size).step(2){|n|
     nsq = n**2
 
     sum += nsq + (nsq - n + 1) + (nsq - 2*n + 2) + (nsq - 3*n + 3)
   }
 
   puts "The sum of the numbers on the diagonals in a #{size} by #{size} spiral is #{sum}."
+end
+
+timing_method do
+
+  size = 1001
+  sum = 1
+
+  (3..size).step(2){|n|
+    sum += (4*n*n) - 6*n + 6
+  }
+
+  puts "The sum of the numbers on the diagonals in a #{size} by #{size} spiral is #{sum}."
+
 end
