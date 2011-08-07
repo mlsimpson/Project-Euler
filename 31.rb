@@ -39,3 +39,23 @@ timing_method do
   p coins[0].integer_partitions(coins)
 
 end
+
+# Dynamic programming solution:
+
+timing_method do
+  coins = [200, 100, 50, 20, 10, 5, 2, 1]
+
+  ways = [1] + Array.new(coins[0], 0)
+
+  coins.each{|coin|
+    i = coin
+    while i < (coins[0] + 1)
+      ways[i] += ways[i-coin]
+      i += 1
+    end
+  }
+
+  p ways
+  p ways[coins[0]]
+
+end
