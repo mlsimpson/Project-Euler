@@ -47,7 +47,20 @@ timing_method do
     end
     i -= 2 # Only check odd numbers; no even number > 2 is prime
   }
-
   p i
+end
 
+# Much faster to create an array of permutations.
+# Start with 7654321, since the array will then be sorted in descending order.
+# The first value discovered is the highest.
+timing_method do
+
+  sevendigits = "7654321".chars.to_a.permutation.to_a
+
+  sevendigits.each{|num|
+    if num.to_s.to_i.isPrime?
+      p num.to_s.to_i
+      break
+    end
+  }
 end
