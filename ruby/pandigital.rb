@@ -16,6 +16,5 @@ class Integer
     else
       return false
     end
-
   end
 end
