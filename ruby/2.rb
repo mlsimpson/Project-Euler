@@ -59,8 +59,8 @@ end
 timing_method do
   x, y, sum = 1, 1, 0
   while sum < 4_000_000
-      sum += (x + y)
-        x, y = x + 2*y, 2*x + 3*y
+    sum += (x + y)
+    x, y = x + 2*y, 2*x + 3*y
   end
 
   puts "Sum is #{ sum }."
@@ -68,5 +68,5 @@ end
 
 FIB_MATRIX = Matrix[[1,1],[1,0]]
 def fibm(n)
-    (FIB_MATRIX**(n-1))[0,0]
+  (FIB_MATRIX**(n-1))[0,0]
 end
