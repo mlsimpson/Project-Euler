@@ -20,6 +20,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <stdint.h>
 // #include <gmp.h>
 
 int main(int argc, const char *argv[])
