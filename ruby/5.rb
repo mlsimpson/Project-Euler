@@ -30,6 +30,7 @@ timing_method do
   # (1..max).each would also work.
   (1..max).each{|i|
     result = lcm(i, result)
+    puts "#{i}, #{result}"
   }
 
   puts "The least common multiple of all numbers up to #{max} is #{result}"
