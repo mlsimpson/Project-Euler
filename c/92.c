@@ -16,7 +16,7 @@
  * =====================================================================================
  */
 
-#include <iostream>
+#include <stdio.h>
 
 int next(int n)
 {
@@ -29,13 +29,14 @@ int next(int n)
 int main()
 {
   int result = 0;
-  for ( int start = 1; start < 10000000; ++start )
+  int start = 1;
+  for ( start; start < 10000000; ++start )
   {
     int curr = start;
     while ( curr != 1 && curr != 89 )
       curr = next(curr);
     result += curr == 89;
   }
-  std::cout << result << std::endl;
+  printf("%d\n", result);
   return 0;
 }
