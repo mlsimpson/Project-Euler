@@ -31,7 +31,7 @@ int* sieve ( int limit, int* size )
   int j = 0;
   int count = 0;
   int* array = malloc(limit*sizeof(int));
-
+  int* result;
   if (array == NULL) {
     return NULL;
   }
@@ -60,7 +60,7 @@ int* sieve ( int limit, int* size )
     }
   }
 
-  int* result = malloc(count*sizeof(int));
+  result = malloc(count*sizeof(int));
 
   if (result == NULL) {
     return NULL;
