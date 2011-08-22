@@ -82,7 +82,7 @@ timing_method do
 
   n = 3 # Index for triangle numbers.  Starts at 3, since 1 is not prime, and is not testable.
   numexponents = 0 # Value to test
-
+  tri = 1
   while numexponents <= num_factors_test
 
     # A triangle number is the sum of all numbers up to a certain limit.
@@ -107,7 +107,7 @@ timing_method do
     # Success condition:
     # - When array.map{|i| i += 1}.reduce(1, :*) == 500
 
-    puts "Current Triangle number:  #{tri}"
+    # puts "Current Triangle number:  #{tri}"
     exp_count = 0
 
     factors = Array.new # Array of factors
@@ -130,10 +130,10 @@ timing_method do
       end
     end
 
-    factors.zip(exponents){|arr|
-      puts "Factor:  #{arr[0]}, exponent:  #{arr[1]}"
-    }
-    puts
+    # factors.zip(exponents){|arr|
+    #   puts "Factor:  #{arr[0]}, exponent:  #{arr[1]}"
+    # }
+    # puts
     numexponents = exponents.map{|i| i += 1}.reduce(1, :*) # Add 1 to each exponent, then multiply them all together
     n += 1
   end
