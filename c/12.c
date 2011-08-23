@@ -125,6 +125,8 @@ int main ( int argc, char *argv[] )
     x = 0;
     z = 0;
 
+    oldprime = 0;
+
     factors = calloc(10, sizeof(int));
     if (factors == NULL) {
       printf("Could not allocate memory for factors[]\n");
