@@ -216,7 +216,9 @@ timing_method do
     num_array << str.chomp.to_i
   }
 
-   puts num_array.inject(0){|sum, number|
+
+
+  puts num_array.inject(0){|sum, number|
     sum += number
     sum
   }.to_s.slice(0...10)
